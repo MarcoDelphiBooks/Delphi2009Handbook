@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{31118E15-5197-4935-B16E-5D2D9B5835CA}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="ThinPlus2009Server.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="ThinPlus2009Client.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="ThinPlus2009Server">
+			<MSBuild Projects="ThinPlus2009Server.dproj"/>
+		</Target>
+		<Target Name="ThinPlus2009Server:Clean">
+			<MSBuild Targets="Clean" Projects="ThinPlus2009Server.dproj"/>
+		</Target>
+		<Target Name="ThinPlus2009Server:Make">
+			<MSBuild Targets="Make" Projects="ThinPlus2009Server.dproj"/>
+		</Target>
+		<Target Name="ThinPlus2009Client">
+			<MSBuild Projects="ThinPlus2009Client.dproj"/>
+		</Target>
+		<Target Name="ThinPlus2009Client:Clean">
+			<MSBuild Targets="Clean" Projects="ThinPlus2009Client.dproj"/>
+		</Target>
+		<Target Name="ThinPlus2009Client:Make">
+			<MSBuild Targets="Make" Projects="ThinPlus2009Client.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="ThinPlus2009Server;ThinPlus2009Client"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="ThinPlus2009Server:Clean;ThinPlus2009Client:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="ThinPlus2009Server:Make;ThinPlus2009Client:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

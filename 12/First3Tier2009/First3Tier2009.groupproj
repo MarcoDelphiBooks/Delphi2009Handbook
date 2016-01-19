@@ -1,0 +1,48 @@
+﻿	<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+		<PropertyGroup>
+			<ProjectGuid>{763B6A26-5DD9-474E-B685-78538C7D3B30}</ProjectGuid>
+		</PropertyGroup>
+		<ItemGroup>
+			<Projects Include="First3Tier2009_Server.dproj">
+				<Dependencies/>
+			</Projects>
+			<Projects Include="First3Tier2009_Client.dproj">
+				<Dependencies/>
+			</Projects>
+		</ItemGroup>
+		<ProjectExtensions>
+			<Borland.Personality>Default.Personality.12</Borland.Personality>
+			<Borland.ProjectType/>
+			<BorlandProject>
+				<Default.Personality/>
+			</BorlandProject>
+		</ProjectExtensions>
+		<Target Name="First3Tier2009_Server">
+			<MSBuild Projects="First3Tier2009_Server.dproj"/>
+		</Target>
+		<Target Name="First3Tier2009_Server:Clean">
+			<MSBuild Targets="Clean" Projects="First3Tier2009_Server.dproj"/>
+		</Target>
+		<Target Name="First3Tier2009_Server:Make">
+			<MSBuild Targets="Make" Projects="First3Tier2009_Server.dproj"/>
+		</Target>
+		<Target Name="First3Tier2009_Client">
+			<MSBuild Projects="First3Tier2009_Client.dproj"/>
+		</Target>
+		<Target Name="First3Tier2009_Client:Clean">
+			<MSBuild Targets="Clean" Projects="First3Tier2009_Client.dproj"/>
+		</Target>
+		<Target Name="First3Tier2009_Client:Make">
+			<MSBuild Targets="Make" Projects="First3Tier2009_Client.dproj"/>
+		</Target>
+		<Target Name="Build">
+			<CallTarget Targets="First3Tier2009_Server;First3Tier2009_Client"/>
+		</Target>
+		<Target Name="Clean">
+			<CallTarget Targets="First3Tier2009_Server:Clean;First3Tier2009_Client:Clean"/>
+		</Target>
+		<Target Name="Make">
+			<CallTarget Targets="First3Tier2009_Server:Make;First3Tier2009_Client:Make"/>
+		</Target>
+		<Import Project="$(BDS)\Bin\CodeGear.Group.Targets" Condition="Exists('$(BDS)\Bin\CodeGear.Group.Targets')"/>
+	</Project>

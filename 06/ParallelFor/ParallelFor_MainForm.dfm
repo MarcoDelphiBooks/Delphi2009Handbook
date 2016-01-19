@@ -1,0 +1,82 @@
+object FormParallelFor: TFormParallelFor
+  Left = 206
+  Top = 147
+  Width = 480
+  Height = 496
+  HorzScrollBar.Range = 54
+  HorzScrollBar.Tracking = True
+  VertScrollBar.Range = 110
+  Caption = 'ParallelFor'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -14
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = True
+  PixelsPerInch = 120
+  TextHeight = 16
+  object btnPlain: TButton
+    Left = 30
+    Top = 30
+    Width = 92
+    Height = 30
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Caption = 'btnPlain'
+    TabOrder = 0
+    OnClick = btnPlainClick
+  end
+  object btnParallel1: TButton
+    Left = 146
+    Top = 30
+    Width = 93
+    Height = 30
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Caption = 'btnParallel1'
+    TabOrder = 1
+    OnClick = btnParallel1Click
+  end
+  object Memo1: TMemo
+    Left = 30
+    Top = 79
+    Width = 417
+    Height = 355
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    TabOrder = 2
+  end
+  object btnParallel2: TButton
+    Left = 246
+    Top = 30
+    Width = 92
+    Height = 30
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Caption = 'btnParallel2'
+    TabOrder = 3
+    OnClick = btnParallel2Click
+  end
+  object btnParallel4: TButton
+    Left = 354
+    Top = 30
+    Width = 93
+    Height = 30
+    Margins.Left = 4
+    Margins.Top = 4
+    Margins.Right = 4
+    Margins.Bottom = 4
+    Caption = 'btnParallel4'
+    TabOrder = 4
+    OnClick = btnParallel4Click
+  end
+end
